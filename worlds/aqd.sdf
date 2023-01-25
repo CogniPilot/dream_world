@@ -133,17 +133,17 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>file:///home/ben/git/cognipilot/cerebri/drivers/sim_gz/models/x500</uri>
+      <uri>model://x500</uri>
       <name>x500</name>
       <pose>-1.10686 -0.44989800000000002 -0.017634586874695823 -1.0340289273699292e-17 -1.368478714214901e-17 -4.5214748926409882e-19</pose>
     </include>
     <include>
-      <uri>file:///home/ben/git/cognipilot/cerebri/drivers/sim_gz/models/MR_Buggy3</uri>
+      <uri>model://MR_Buggy3</uri>
       <name>MR_Buggy3</name>
       <pose>-0.99794353255206092 2.0390681815049687 0.03648454046083819 3.730704538334709e-08 7.5544924963307716e-09 5.3728964261648267e-14</pose>
     </include>
     <include>
-      <uri>file:///home/ben/git/cognipilot/cerebri/drivers/sim_gz/models/ELM4_Chassis</uri>
+      <uri>model://ELM4_Chassis</uri>
       <name>ELM4_Chassis</name>
       <pose>-0.99794391004811189 -3.3044623924712129 0.15352427149988368 3.3839098522006304e-13 6.9257406846069488e-15 1.5991274227171215e-10</pose>
     </include>
