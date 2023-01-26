@@ -48,14 +48,14 @@ RUN /tmp/install/base.sh && /docker_clean.sh
 COPY install/ros.sh /tmp/install/ros.sh
 RUN /tmp/install/ros.sh && /docker_clean.sh
 
-COPY install/gazebo.sh /tmp/install/gazebo.sh
+COPY install/gazebo_custom.sh /tmp/install/gazebo.sh
 RUN /tmp/install/gazebo.sh && /docker_clean.sh
 
 COPY install/zenoh.sh /tmp/install/zenoh.sh
 RUN /tmp/install/zenoh.sh && /docker_clean.sh
 
-COPY install/ros_gz.sh /tmp/install/ros_gz.sh
-RUN /tmp/install/ros_gz.sh && /docker_clean.sh
+#COPY install/ros_gz.sh /tmp/install/ros_gz.sh
+#RUN /tmp/install/ros_gz.sh && /docker_clean.sh
 
 # add groups before we do anything that might add a new group
 ARG GID_INPUT=107
