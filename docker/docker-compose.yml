@@ -13,7 +13,7 @@ services:
       - RUN_VNC=false
       - RUN_ZETH=false
     container_name: simulation
-    image: ${REGISTRY}/cognipilot/simulation:${TAG}
+    image: ${REGISTRY}/cognipilot/simulation-build:${TAG}
     build:
       dockerfile: Dockerfile
     tty: true
