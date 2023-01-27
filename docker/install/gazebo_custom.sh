@@ -10,7 +10,7 @@ sudo apt-get -y upgrade
 sudo DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
 	python3-vcstool python3-colcon-common-extensions
 cd /tmp
-wget https://raw.githubusercontent.com/rudislabs/gazebodistro/cognipilot/collection-garden.yaml -O collection-garden.yaml
+wget https://raw.githubusercontent.com/gazebo-tooling/gazebodistro/master/collection-garden.yaml -O collection-garden.yaml
 vcs import < collection-garden.yaml
 
 sudo apt-get -y install \

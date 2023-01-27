@@ -8,10 +8,8 @@ cd /workdir/gazebo/src
 wget https://raw.githubusercontent.com/rudislabs/gazebodistro/cognipilot/collection-garden.yaml -O collection-garden.yaml
 vcs import < collection-garden.yaml
 
-git clone -b ros2 https://github.com/gazebosim/ros_gz.git
-
-sudo apt -y install \
-  $(sort -u $(find . -iname 'packages-'`lsb_release -cs`'.apt' -o -iname 'packages.apt' | grep -v '/\.git/') | sed '/gz\|sdf/d' | tr '\n' ' ')
+#sudo apt -y install \
+#  $(sort -u $(find . -iname 'packages-'`lsb_release -cs`'.apt' -o -iname 'packages.apt' | grep -v '/\.git/') | sed '/gz\|sdf/d' | tr '\n' ' ')
 
 cd /workdir/gazebo
 colcon graph
