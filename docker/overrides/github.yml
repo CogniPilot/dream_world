@@ -1,6 +1,0 @@
-services:
-
-  simulation:
-
-    environment:
-      - DOCKER_REGISTRY=ghcr.io

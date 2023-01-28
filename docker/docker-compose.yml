@@ -7,12 +7,12 @@ volumes:
 
 services:
 
-  simulation:
+  dream:
     environment:
       - DISPLAY=$DISPLAY
       - RUN_VNC=false
       - RUN_ZETH=false
-    image: ${REGISTRY}/cognipilot/simulation-build:${TAG}
+    image: ${REGISTRY}/cognipilot/dream:${TAG}
     build:
       dockerfile: Dockerfile
     tty: true

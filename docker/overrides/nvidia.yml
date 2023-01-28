@@ -1,6 +1,6 @@
 services:
 
-  simulation:
+  dream:
 
     deploy:
       resources:

@@ -13,7 +13,7 @@ mkdir ~/.vnc && echo "$VNCPASSWD" | /opt/TurboVNC/bin/vncpasswd -f > ~/.vnc/pass
 cat << EOF >> ~/.profile
 source /opt/ros/humble/setup.bash
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export GZ_SIM_RESOURCE_PATH=/workdir/simulation/models:/workdir/simulation/worlds
+export GZ_SIM_RESOURCE_PATH=/workdir/dream/models:/workdir/dream/worlds
 if [ -f /workdir/gazebo/install/setup.bash ]; then
   source /workdir/gazebo/install/setup.bash
 fi

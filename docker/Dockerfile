@@ -114,6 +114,6 @@ RUN sudo chmod +x /entrypoint.sh
 CMD ["/bin/bash"]
 ENTRYPOINT ["/entrypoint.sh"]
 
-LABEL org.opencontainers.image.source = "https://github.com/CogniPilot/simulation"
+LABEL org.opencontainers.image.source = "https://github.com/CogniPilot/dream"
 
 # vim: set et fenc=utf-8 ff=unix ft=dockerfile sts=0 sw=2 ts=2 :
