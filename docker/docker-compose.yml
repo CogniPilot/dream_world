@@ -18,11 +18,11 @@ services:
     tty: true
     stdin_open: true
     privileged: true
-    hostname: simulation
+    hostname: dream
     sysctls:
       - net.ipv6.conf.all.disable_ipv6=0
     volumes:
       - ./workdir:/workdir
-      - ..:/workdir/simulation
+      - ..:/workdir/dream
       - gz_config:/home/user/.gz
       - /tmp/.X11-unix:/tmp/.X11-unix
