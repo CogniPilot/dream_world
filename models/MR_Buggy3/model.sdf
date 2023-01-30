@@ -352,7 +352,16 @@
     <plugin
       filename="gz-sim-odometry-publisher-system"
       name="gz::sim::systems::OdometryPublisher">
+      <odom_frame>map</odom_frame>
+      <xyz_offset>0 0 0</xyz_offset>
+      <rpy_offset>0 0 0</rpy_offset>
+      <gaussian_noise>0</gaussian_noise>
+      <!-- <robot_base_frame></robot_base_frame> , default uses model name, which we want -->
       <dimensions>3</dimensions>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <!-- <odom_topic>buggy_odom</odom_topic>
+      <odomCovTopic>buggy_odom_cov</odomCovTopic>
+      <tf_topic>buggy</tf_topic> -->
     </plugin>
   </model>
 </sdf>
