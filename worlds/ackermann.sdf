@@ -72,9 +72,9 @@
     <atmosphere type='adiabatic'/>
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
-      <latitude_deg>40.415285248550489</latitude_deg>
-      <longitude_deg>-86.932898909526358</longitude_deg>
-      <elevation>185</elevation>
+      <latitude_deg>39.79480109851339</latitude_deg>
+      <longitude_deg>-84.08631702793322</longitude_deg>
+      <elevation>265.2</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <scene>
