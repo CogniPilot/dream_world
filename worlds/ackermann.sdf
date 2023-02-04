@@ -143,7 +143,7 @@
     <include>
       <uri>model://MR_Buggy3</uri>
       <name>MR_Buggy3</name>
-      <pose> 0 0 0 0 0 0</pose>
+      <pose>0 0 0.1 0 0 0</pose>
     </include>
     <light name='sunUTC' type='directional'>
       <pose>0 0 500 0 0 0</pose>
