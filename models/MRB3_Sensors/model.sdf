@@ -2,16 +2,16 @@
 <sdf version='1.9'>
   <model name='MRB3_Sensors'>
     <include merge='true'>
-      <uri>models://MR_Buggy3</uri>
+      <uri>models://MRB3</uri>
     </include>
     <include merge='true'>
       <uri>models://RPLIDAR_A1M8</uri>
-      <pose>0 0 .1 0 0 0</pose>
+      <pose>.05 0 .134 0 0 0</pose>
     </include>
     <joint name="MRB3_Sensors/RPLIDAR_A1M8/Joint" type="fixed">
-      <parent>MR_Buggy3/Base</parent>
+      <parent>MRB3/Base</parent>
       <child>RPLIDAR_A1M8/Base</child>
-      <pose relative_to="MR_Buggy3/Base">0 0 .1 0 0 0</pose>
+      <pose relative_to="MRB3/Base">.05 0 .134 0 0 0</pose>
     </joint>
   </model>
 </sdf>
