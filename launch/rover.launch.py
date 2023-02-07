@@ -28,7 +28,7 @@ def generate_launch_description():
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('ros_gz_sim') + '/launch/gz_sim.launch.py'),
             launch_arguments = {
-                'ign_args': 'ackermann.sdf -v 0'
+                'ign_args': 'mrb3s_map.sdf -v 0'
             }.items()),
         Node(
            package='ros_gz_bridge',
