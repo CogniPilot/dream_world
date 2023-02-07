@@ -70,7 +70,7 @@
         <gz-gui>
           <property type="string" key="state">docked</property>
         </gz-gui>
-        <follow_target>MRB3_Sensors</follow_target>
+        <follow_target>MRB3_sensors</follow_target>
         <follow_offset>-1.0 0.0 2.0</follow_offset>
         <follow_pgain>1.0</follow_pgain>
       </plugin>
@@ -141,8 +141,8 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>model://MRB3_Sensors</uri>
-      <name>MRB3_Sensors</name>
+      <uri>model://MRB3_sensors</uri>
+      <name>MRB3_sensors</name>
       <pose>0 0 0.1 0 0 0</pose>
     </include>
     <model name='wall_1'>
