@@ -9,8 +9,8 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
     use_sim_time = True
-    corti_dir = get_package_share_directory('corti')
     logger = launch.substitutions.LaunchConfiguration("log_level")
+    gui_config = get_package_share_directory('dream') + '/config/mrb3s.config'
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument(
             "log_level",
@@ -22,13 +22,13 @@ def generate_launch_description():
             shell=True
         ),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('corti') + '/launch/corti.launch.py')),
+            get_package_share_directory('corti') +  '/launch/corti.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('electrode') + '/launch/electrode.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('ros_gz_sim') + '/launch/gz_sim.launch.py'),
-            launch_arguments = {
-                'ign_args': 'mrb3s_map.sdf -v 0'
+            launch_arguments={
+                'gz_args': f'mrb3s_map.sdf -v 0 --gui-config {gui_config}'
             }.items()),
         Node(
            package='ros_gz_bridge',
