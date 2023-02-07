@@ -1,0 +1,3 @@
+#!/bin/bash
+ros2 topic pub /joy sensor_msgs/msg/Joy \
+	"{axes: [0.0, 0.0, 0.0, 0.0, 0.0], buttons: [0, 0, 0, 0, 0, 0, 0, 0]}" -t 1

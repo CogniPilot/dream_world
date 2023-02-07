@@ -25,4 +25,13 @@ endif()
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 
+# Install Python executables
+install(PROGRAMS
+  scripts/arm
+  scripts/disarm
+  scripts/manual
+  scripts/trajectory
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
