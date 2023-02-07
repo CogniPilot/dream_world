@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.9'>
-  <model name='MRB3_sensors'>
+  <model name='mrb3s'>
     <include merge='true'>
       <uri>models://MRB3</uri>
     </include>
@@ -8,7 +8,7 @@
       <uri>models://RPLIDAR_A1M8</uri>
       <pose>.05 0 .134 0 0 0</pose>
     </include>
-    <joint name="MRB3_sensors/RPLIDAR_A1M8/Joint" type="fixed">
+    <joint name="mrb3s/RPLIDAR_A1M8/Joint" type="fixed">
       <parent>MRB3/Base</parent>
       <child>RPLIDAR_A1M8/Base</child>
       <pose relative_to="MRB3/Base">.05 0 .134 0 0 0</pose>
