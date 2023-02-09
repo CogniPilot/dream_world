@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='melms'>
+    <include merge='true'>
+      <uri>models://MiniMando</uri>
+    </include>
+    <include merge='true'>
+      <uri>models://RPLIDAR_A1M8</uri>
+      <pose>0 0 .62 0 0 0</pose>
+    </include>
+    <joint name="melms/RPLIDAR_A1M8/Joint" type="fixed">
+      <parent>MiniMando/Base</parent>
+      <child>RPLIDAR_A1M8/Base</child>
+      <pose relative_to="MiniMando/Base">0 0 .62 0 0 0</pose>
+    </joint>
+  </model>
+</sdf>

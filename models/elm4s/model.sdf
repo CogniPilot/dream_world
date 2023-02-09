@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version='1.9'>
+  <model name='elm4s'>
+    <include merge='true'>
+      <uri>models://ELM4_Chassis</uri>
+    </include>
+    <include merge='true'>
+      <uri>models://RPLIDAR_A1M8</uri>
+      <pose>0 0 .715 0 0 0</pose>
+    </include>
+    <joint name="elm4s/RPLIDAR_A1M8/Joint" type="fixed">
+      <parent>ELM4_Chassis/Base</parent>
+      <child>RPLIDAR_A1M8/Base</child>
+      <pose relative_to="ELM4_Chassis/Base">0 0 .715 0 0 0</pose>
+    </joint>
+  </model>
+</sdf>
