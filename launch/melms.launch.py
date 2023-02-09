@@ -22,13 +22,13 @@ def generate_launch_description():
             shell=True
         ),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('corti') +  '/launch/corti.launch.py')),
+            get_package_share_directory('corti') +  '/launch/melms_corti.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('electrode') + '/launch/electrode.launch.py')),
+            get_package_share_directory('electrode') + '/launch/melms_electrode.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('ros_gz_sim') + '/launch/gz_sim.launch.py'),
             launch_arguments={
-                'gz_args': f'mrb3s_map.sdf -v 0 --gui-config {gui_config} -r'
+                'gz_args': f'melms_map.sdf -v 0 --gui-config {gui_config} -r'
             }.items()),
         Node(
            package='ros_gz_bridge',
@@ -42,10 +42,10 @@ def generate_launch_description():
              # trajectory from ROS to Gazesbo
              '/traj@synapse_msgs/msg/BezierTrajectory@gz.msgs.BezierTrajectory',
              # odometry from Gazebo model to ROS
-             '/model/mrb3s/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-             '/model/mrb3s/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
+             '/model/melms/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
+             '/model/melms/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
              # Sensors
-             '/world/default/model/mrb3s/link/RPLIDAR_A1M8/Base/sensor/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+             '/world/default/model/melms/link/RPLIDAR_A1M8/Base/sensor/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
              # ros args
              '--ros-args', '--log-level', logger,
            ],
