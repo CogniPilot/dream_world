@@ -10,7 +10,7 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     use_sim_time = True
     logger = launch.substitutions.LaunchConfiguration("log_level")
-    gui_config = get_package_share_directory('dream') + '/config/mrb3s.config'
+    gui_config = get_package_share_directory('dream') + '/config/gui.config'
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument(
             "log_level",
