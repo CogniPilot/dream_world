@@ -420,7 +420,7 @@
       </link>
       <self_collide>false</self_collide>
     </model>
-    <model name='cylinder_2'>
+    <!-- <model name='cylinder_2'>
       <pose>3 4.5 .5 0 0 0</pose>
       <static>true</static>
       <link name='link'>
@@ -460,7 +460,7 @@
         <enable_wind>false</enable_wind>
       </link>
       <self_collide>false</self_collide>
-    </model>
+    </model> -->
     <model name='sphere_1'>
       <pose>-6.5 6.5 0 0 0 0</pose>
       <static>true</static>
@@ -482,6 +482,52 @@
             <ambient>0.7 0.7 0.7 1</ambient>
             <diffuse>0.7 0.7 0.7 1</diffuse>
             <specular>0.7 0.7 0.7 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='sphere_2'>
+      <pose>4 4 -9.5 0 0 0</pose>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <sphere>
+              <radius>10</radius>
+            </sphere>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <sphere>
+              <radius>10</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>0.5 0.5 0.5 1</ambient>
+            <diffuse>0.5 0.5 0.5 1</diffuse>
+            <specular>0.5 0.5 0.5 1</specular>
           </material>
         </visual>
         <inertial>
