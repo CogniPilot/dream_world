@@ -13,7 +13,6 @@ class VirtualJoystick(Node):
         super().__init__('virtual_joystick')
         self.publisher_ = self.create_publisher(Joy, '/joy', 10)
 
-        my_parameter_descriptor = ParameterDescriptor(description='This parameter is mine!')
         self.declare_parameter(
             'arm', False,  ParameterDescriptor(description='Arm (true/false)'))
         self.declare_parameter(

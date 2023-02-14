@@ -1,28 +1,28 @@
-import launch
 from launch import LaunchDescription
-from launch.actions import IncludeLaunchDescription, ExecuteProcess
+from launch.actions import IncludeLaunchDescription, ExecuteProcess, \
+        DeclareLaunchArgument, Shutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, FindExecutable
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
 from ament_index_python.packages import get_package_share_directory
 
+
 def generate_launch_description():
     use_sim_time = True
-    logger = launch.substitutions.LaunchConfiguration("log_level")
+    logger = LaunchConfiguration("log_level")
     gui_config = get_package_share_directory('dream') + '/config/gui.config'
     return LaunchDescription([
-        launch.actions.DeclareLaunchArgument(
+        DeclareLaunchArgument(
             "log_level",
             default_value=["warn"],
             description="Logging level"),
         ExecuteProcess(
             cmd="terminator -u -T cerebri --geometry=500x700+0+0 -e cerebri 2>&1".split(),
             output="log",
-            shell=True
-        ),
+            shell=True),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('corti') +  '/launch/mrb3s_corti.launch.py')),
+            get_package_share_directory('corti') + '/launch/mrb3s_corti.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('electrode') + '/launch/mrb3s_electrode.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
@@ -43,13 +43,15 @@ def generate_launch_description():
              '/traj@synapse_msgs/msg/BezierTrajectory@gz.msgs.BezierTrajectory',
              # odometry from Gazebo model to ROS
              '/model/mrb3s/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
-             '/model/mrb3s/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance',
+             '/model/mrb3s/odometry_with_covariance@nav_msgs/msg/Odometry@'
+             'gz.msgs.OdometryWithCovariance',
              # Sensors
-             '/world/default/model/mrb3s/link/RPLIDAR_A1M8/Base/sensor/lidar/scan@sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
+             '/world/default/model/mrb3s/link/RPLIDAR_A1M8/Base/sensor/lidar/scan@'
+             'sensor_msgs/msg/LaserScan[gz.msgs.LaserScan',
              # ros args
              '--ros-args', '--log-level', logger,
            ],
            parameters=[{'use_sim_time': use_sim_time}],
-           on_exit=launch.actions.Shutdown()
+           on_exit=Shutdown()
         ),
     ])
