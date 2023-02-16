@@ -17,10 +17,8 @@ def generate_launch_description():
             "log_level",
             default_value=["warn"],
             description="Logging level"),
-        ExecuteProcess(
-            cmd="terminator -u -T cerebri --geometry=500x700+0+0 -e cerebri 2>&1".split(),
-            output="log",
-            shell=True),
+        IncludeLaunchDescription(PythonLaunchDescriptionSource(
+            get_package_share_directory('cerebri') + '/launch/cerebri.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('corti') + '/launch/mrb3s_corti.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
