@@ -32,6 +32,26 @@
           </box>
         </geometry>
       </collision>
+      <sensor name="imu_sensor" type="imu">
+        <always_on>1</always_on>
+        <update_rate>250</update_rate>
+      </sensor>
+      <sensor name="mag_sensor" type="magnetometer">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+      </sensor>
+      <sensor name="altimeter_sensor" type="altimeter">
+        <always_on>1</always_on>
+        <update_rate>50</update_rate>
+      </sensor>
+      <sensor name="navsat_sensor" type="navsat">
+        <always_on>1</always_on>
+        <update_rate>10</update_rate>
+        <position_sensing>
+        </position_sensing>
+        <velocity_sensing>
+        </velocity_sensing>
+      </sensor>
     </link>
     <link name="MRB3/FrontRightWheel">
       <pose relative_to="MRB3/FrontRightWheelJoint">0 0 0 0 0 0</pose>
