@@ -20,9 +20,7 @@ def generate_launch_description():
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('cerebri') + '/launch/cerebri.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('corti') + '/launch/mrb3s_corti.launch.py')),
-        IncludeLaunchDescription(PythonLaunchDescriptionSource(
-            get_package_share_directory('electrode') + '/launch/mrb3s_electrode.launch.py')),
+            get_package_share_directory('corti') + '/launch/mrb3s_corti_nav2.launch.py')),
         IncludeLaunchDescription(PythonLaunchDescriptionSource(
             get_package_share_directory('ros_gz_sim') + '/launch/gz_sim.launch.py'),
             launch_arguments={
@@ -37,8 +35,6 @@ def generate_launch_description():
              '/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock',
              # joystick from ROS to Gazebo
              '/joy@sensor_msgs/msg/Joy@gz.msgs.Joy',
-             # trajectory from ROS to Gazesbo
-             '/traj@synapse_msgs/msg/BezierTrajectory@gz.msgs.BezierTrajectory',
              # odometry from Gazebo model to ROS
              '/model/mrb3s/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry',
              '/model/mrb3s/odometry_with_covariance@nav_msgs/msg/Odometry@'
