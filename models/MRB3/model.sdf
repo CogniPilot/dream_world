@@ -3,7 +3,7 @@
     <pose>0 0 .04 0 0 0</pose>
     <self_collide>false</self_collide>
     <static>false</static>
-    <link name="MRB3/Base">
+    <link name="base_link">
       <inertial>
         <pose>0 0 0 0 0 0</pose>
         <mass>3.0</mass>
@@ -16,7 +16,7 @@
           <izz>0.0252</izz>
         </inertia>
       </inertial>
-      <visual name="MRB3/BaseVisual">
+      <visual name="BaseVisual">
         <pose>-.008 0 -.0202 0 0 1.5707</pose>
         <geometry>
           <mesh>
@@ -24,7 +24,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="MRB3/BaseCollision">
+      <collision name="BaseCollision">
         <pose>0 0 .06 0 0 0</pose>
         <geometry>
           <box>
@@ -33,6 +33,7 @@
         </geometry>
       </collision>
     </link>
+    <link name="base_footprint"/>
     <link name="sensors">
       <pose>0 0 0 0 0 0</pose>
       <inertial>
@@ -62,14 +63,12 @@
       <sensor name="navsat_sensor" type="navsat">
         <always_on>1</always_on>
         <update_rate>10</update_rate>
-        <position_sensing>
-        </position_sensing>
-        <velocity_sensing>
-        </velocity_sensing>
+        <!-- <position_sensing></position_sensing>
+        <velocity_sensing></velocity_sensing> -->
       </sensor>
     </link>
-    <link name="MRB3/FrontRightWheel">
-      <pose relative_to="MRB3/FrontRightWheelJoint">0 0 0 0 0 0</pose>
+    <link name="FrontRightWheel">
+      <pose relative_to="FrontRightWheelJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>.05</mass>
         <inertia>
@@ -83,7 +82,7 @@
       </inertial>
       <gravity>true</gravity>
       <velocity_decay/>
-      <visual name="MRB3/FrontRightWheelVisual">
+      <visual name="FrontRightWheelVisual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -91,7 +90,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="MRB3/FrontRightWheelCollision">
+      <collision name="FrontRightWheelCollision">
         <pose>0 .015 0 -1.5707 0 0</pose>
         <geometry>
           <cylinder>
@@ -110,8 +109,8 @@
         </surface>
       </collision>
     </link>
-    <link name="MRB3/FrontRightWheelSteering">
-      <pose relative_to="MRB3/FrontRightWheelSteeringJoint">0 0 0 0 0 0</pose>
+    <link name="FrontRightWheelSteering">
+      <pose relative_to="FrontRightWheelSteeringJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.005</mass>
         <inertia>
@@ -121,8 +120,8 @@
         </inertia>
       </inertial>
     </link>
-    <link name="MRB3/FrontLeftWheel">
-      <pose relative_to="MRB3/FrontLeftWheelJoint">0 0 0 0 0 0</pose>
+    <link name="FrontLeftWheel">
+      <pose relative_to="FrontLeftWheelJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>.05</mass>
         <inertia>
@@ -136,7 +135,7 @@
       </inertial>
       <gravity>true</gravity>
       <velocity_decay/>
-      <visual name="MRB3/FrontLeftWheelVisual">
+      <visual name="FrontLeftWheelVisual">
         <pose>0 0 0 0 0 3.14159</pose>
         <geometry>
           <mesh>
@@ -144,7 +143,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="MRB3/FrontLeftWheelCollision">
+      <collision name="FrontLeftWheelCollision">
         <pose>0 -.015 0 -1.5707 0 0</pose>
         <geometry>
           <cylinder>
@@ -163,8 +162,8 @@
         </surface>
       </collision>
     </link>
-    <link name="MRB3/FrontLeftWheelSteering">
-      <pose relative_to="MRB3/FrontLeftWheelSteeringJoint">0 0 0 0 0 0</pose>
+    <link name="FrontLeftWheelSteering">
+      <pose relative_to="FrontLeftWheelSteeringJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>0.005</mass>
         <inertia>
@@ -174,8 +173,8 @@
         </inertia>
       </inertial>
     </link>
-    <link name="MRB3/RearRightWheel">
-      <pose relative_to="MRB3/RearRightWheelJoint">0 0 0 0 0 0</pose>
+    <link name="RearRightWheel">
+      <pose relative_to="RearRightWheelJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>.05</mass>
         <inertia>
@@ -189,7 +188,7 @@
       </inertial>
       <gravity>true</gravity>
       <velocity_decay/>
-      <visual name="MRB3/RearRightWheelVisual">
+      <visual name="RearRightWheelVisual">
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
@@ -197,7 +196,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="MRB3/RearRightWheelCollision">
+      <collision name="RearRightWheelCollision">
         <pose>0 .015 0 -1.5707 0 0</pose>
         <geometry>
           <cylinder>
@@ -216,8 +215,8 @@
         </surface>
       </collision>
     </link>
-    <link name="MRB3/RearLeftWheel">
-      <pose relative_to="MRB3/RearLeftWheelJoint">0 0 0 0 0 0</pose>
+    <link name="RearLeftWheel">
+      <pose relative_to="RearLeftWheelJoint">0 0 0 0 0 0</pose>
       <inertial>
         <mass>.05</mass>
         <inertia>
@@ -231,7 +230,7 @@
       </inertial>
       <gravity>true</gravity>
       <velocity_decay/>
-      <visual name="MRB3/RearLeftWheelVisual">
+      <visual name="RearLeftWheelVisual">
         <pose>0 0 0 0 0 3.14159</pose>
         <geometry>
           <mesh>
@@ -239,7 +238,7 @@
           </mesh>
         </geometry>
       </visual>
-      <collision name="MRB3/RearLeftWheelCollision">
+      <collision name="RearLeftWheelCollision">
         <pose>0 -.015 0 -1.5707 0 0</pose>
         <geometry>
           <cylinder>
@@ -258,10 +257,10 @@
         </surface>
       </collision>
     </link>
-    <joint name="MRB3/FrontRightWheelSteeringJoint" type="revolute">
-      <parent>MRB3/Base</parent>
-      <child>MRB3/FrontRightWheelSteering</child>
-      <pose relative_to="MRB3/Base">.112 -.10 0 0 0 0</pose>
+    <joint name="FrontRightWheelSteeringJoint" type="revolute">
+      <parent>base_link</parent>
+      <child>FrontRightWheelSteering</child>
+      <pose relative_to="base_link">.112 -.10 0 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -270,13 +269,12 @@
           <velocity>1000</velocity>
           <effort>1000</effort>
         </limit>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="MRB3/FrontRightWheelJoint" type="revolute">
-      <parent>MRB3/FrontRightWheelSteering</parent>
-      <child>MRB3/FrontRightWheel</child>
-      <pose relative_to="MRB3/FrontRightWheelSteeringJoint">0 0 0 0 0 0</pose>
+    <joint name="FrontRightWheelJoint" type="revolute">
+      <parent>FrontRightWheelSteering</parent>
+      <child>FrontRightWheel</child>
+      <pose relative_to="FrontRightWheelSteeringJoint">0 0 0 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -287,13 +285,12 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="MRB3/FrontLeftWheelSteeringJoint" type="revolute">
-      <parent>MRB3/Base</parent>
-      <child>MRB3/FrontLeftWheelSteering</child>
-      <pose relative_to="MRB3/Base">.112 .10 0 0 0 0</pose>
+    <joint name="FrontLeftWheelSteeringJoint" type="revolute">
+      <parent>base_link</parent>
+      <child>FrontLeftWheelSteering</child>
+      <pose relative_to="base_link">.112 .10 0 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -302,13 +299,12 @@
           <velocity>1000</velocity>
           <effort>1000</effort>
         </limit>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="MRB3/FrontLeftWheelJoint" type="revolute">
-      <parent>MRB3/FrontLeftWheelSteering</parent>
-      <child>MRB3/FrontLeftWheel</child>
-      <pose relative_to="MRB3/FrontLeftWheelSteeringJoint">0 0 0 0 0 0</pose>
+    <joint name="FrontLeftWheelJoint" type="revolute">
+      <parent>FrontLeftWheelSteering</parent>
+      <child>FrontLeftWheel</child>
+      <pose relative_to="FrontLeftWheelSteeringJoint">0 0 0 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -319,13 +315,12 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="MRB3/RearRightWheelJoint" type="revolute">
-      <parent>MRB3/Base</parent>
-      <child>MRB3/RearRightWheel</child>
-      <pose relative_to="MRB3/Base">-.1135 -.10 0 0 0 0</pose>
+    <joint name="RearRightWheelJoint" type="revolute">
+      <parent>base_link</parent>
+      <child>RearRightWheel</child>
+      <pose relative_to="base_link">-.1135 -.10 0 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -336,13 +331,12 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
     </joint>
-    <joint name="MRB3/RearLeftWheelJoint" type="revolute">
-      <parent>MRB3/Base</parent>
-      <child>MRB3/RearLeftWheel</child>
-      <pose relative_to="MRB3/Base">-.1135 .10 0 0 0 0</pose>
+    <joint name="RearLeftWheelJoint" type="revolute">
+      <parent>base_link</parent>
+      <child>RearLeftWheel</child>
+      <pose relative_to="base_link">-.1135 .10 0 0 0 0</pose>
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
@@ -353,24 +347,33 @@
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+    </joint>
+    <joint name="base_joint" type="fixed">
+      <parent>base_footprint</parent>
+      <child>base_link</child>
+      <pose>0.0 0.0 0.0 0 0 0</pose>
+    </joint>
+    <joint name="SensorsJoint" type="fixed">
+        <parent>base_link</parent>
+        <child>sensors</child>
+        <pose>0.0 0.0 0.0 0 0 0</pose>
     </joint>
     <plugin
         filename="gz-sim-joint-controller-system"
         name="gz::sim::systems::JointController">
-      <joint_name>MRB3/FrontLeftWheelJoint</joint_name>
-      <joint_name>MRB3/FrontRightWheelJoint</joint_name>
-      <joint_name>MRB3/RearRightWheelJoint</joint_name>
-      <joint_name>MRB3/RearLeftWheelJoint</joint_name>
+      <joint_name>FrontLeftWheelJoint</joint_name>
+      <joint_name>FrontRightWheelJoint</joint_name>
+      <joint_name>RearRightWheelJoint</joint_name>
+      <joint_name>RearLeftWheelJoint</joint_name>
       <sub_topic>drive</sub_topic>
     </plugin>
     <plugin
       filename="gz-sim-ackermann-steering-system"
       name="gz::sim::systems::AckermannSteering">
       <steering_only>true</steering_only>
-      <left_steering_joint>MRB3/FrontLeftWheelSteeringJoint</left_steering_joint>
-      <right_steering_joint>MRB3/FrontRightWheelSteeringJoint</right_steering_joint>
+      <left_steering_joint>FrontLeftWheelSteeringJoint</left_steering_joint>
+      <right_steering_joint>FrontRightWheelSteeringJoint</right_steering_joint>
       <steering_limit>0.4</steering_limit>
       <steer_p_gain>10.0</steer_p_gain>
       <wheel_base>.2255</wheel_base>
@@ -379,16 +382,15 @@
     <plugin
       filename="gz-sim-odometry-publisher-system"
       name="gz::sim::systems::OdometryPublisher">
-      <odom_frame>map</odom_frame>
       <xyz_offset>0 0 0</xyz_offset>
       <rpy_offset>0 0 0</rpy_offset>
       <gaussian_noise>0</gaussian_noise>
-      <!-- <robot_base_frame></robot_base_frame> , default uses model name, which we want -->
+      <robot_base_frame>base_link</robot_base_frame>
       <dimensions>3</dimensions>
-      <odom_publish_frequency>50</odom_publish_frequency>
-      <!-- <odom_topic>buggy_odom</odom_topic>
-      <odomCovTopic>buggy_odom_cov</odomCovTopic>
-      <tf_topic>buggy</tf_topic> -->
+      <odom_publish_frequency>30</odom_publish_frequency>
+      <odom_frame>odom</odom_frame>
+      <odom_topic>odom</odom_topic>
+      <tf_topic>odom</tf_topic>
     </plugin>
   </model>
 </sdf>

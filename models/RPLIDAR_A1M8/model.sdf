@@ -38,9 +38,11 @@
             <resolution>0.01</resolution>
           </range>
         </lidar>
+        <gz_frame_id>base_laser</gz_frame_id>
         <alwaysOn>1</alwaysOn>
         <visualize>true</visualize>
         <update_rate>10</update_rate>
+        <topic>/scan</topic>
       </sensor>
     </link>
   </model>
