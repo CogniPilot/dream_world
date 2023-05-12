@@ -133,8 +133,8 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>model://mrbuggy3</uri>
-      <name>mrbuggy3</name>
+      <uri>model://mrbuggy3_actuator</uri>
+      <name>mrbuggy3_actuator</name>
       <pose>0 0 0 0 0 0</pose>
     </include>
     <model name='wall_1'>

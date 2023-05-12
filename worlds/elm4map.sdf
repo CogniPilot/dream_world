@@ -133,8 +133,8 @@
       <self_collide>false</self_collide>
     </model>
     <include>
-      <uri>model://elm4</uri>
-      <name>elm4</name>
+      <uri>model://elm4_actuator</uri>
+      <name>elm4_actuator</name>
       <pose>0 0 0 0 0 0</pose>
     </include>
     <model name='wall_1'>
