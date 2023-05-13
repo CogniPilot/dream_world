@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sdf version='1.10'>
-  <model name='elm4_actuator'>
+  <model name='elm4'>
     <self_collide>false</self_collide>
     <static>false</static>
     <link name="base_link">
@@ -718,7 +718,7 @@
       <joint_name>BackRightHubMotorWheelJoint</joint_name>
       <!-- <sub_topic>rear_right</sub_topic> -->
       <use_actuator_msg>true</use_actuator_msg>
-      <actuatorNumber>0</actuatorNumber>
+      <actuator_number>0</actuator_number>
     </plugin>
     <plugin
         filename="gz-sim-joint-controller-system"
@@ -726,7 +726,7 @@
       <joint_name>BackLeftHubMotorWheelJoint</joint_name>
       <!-- <sub_topic>rear_left</sub_topic> -->
       <use_actuator_msg>true</use_actuator_msg>
-      <actuatorNumber>1</actuatorNumber>
+      <actuator_number>1</actuator_number>
     </plugin>
     <plugin
         filename="gz-sim-joint-controller-system"
@@ -734,7 +734,7 @@
       <joint_name>FrontLeftHubMotorWheelJoint</joint_name>
       <!-- <sub_topic>front_left</sub_topic> -->
       <use_actuator_msg>true</use_actuator_msg>
-      <actuatorNumber>2</actuatorNumber>
+      <actuator_number>2</actuator_number>
     </plugin>
     <plugin
         filename="gz-sim-joint-controller-system"
@@ -742,7 +742,7 @@
       <joint_name>FrontRightHubMotorWheelJoint</joint_name>
       <!-- <sub_topic>front_right</sub_topic> -->
       <use_actuator_msg>true</use_actuator_msg>
-      <actuatorNumber>3</actuatorNumber>
+      <actuator_number>3</actuator_number>
     </plugin>
     <plugin
       filename="gz-sim-odometry-publisher-system"
