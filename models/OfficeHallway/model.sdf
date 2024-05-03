@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.10">
+  <model name="OfficeHallway">
+    <self_collide>false</self_collide>
+    <static>true</static>
+    <link name="OfficeHallwayLink">
+      <visual name="Glass">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://OfficeHallway/meshes/officehallway.dae</uri>
+            <submesh>
+              <name>Glass</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="Wall">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://OfficeHallway/meshes/officehallway.dae</uri>
+            <submesh>
+              <name>Wall</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+  </model>
+</sdf>
