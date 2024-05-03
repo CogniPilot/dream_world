@@ -5,6 +5,7 @@
     <static>true</static>
     <link name="OfficeHallwayLink">
       <visual name="Glass">
+        <transparency>.5</transparency>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
