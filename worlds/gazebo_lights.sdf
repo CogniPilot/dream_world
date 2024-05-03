@@ -1,0 +1,403 @@
+<sdf version='1.10'>
+  <world name='default'>
+    <physics type='ode'>
+      <max_step_size>0.0040000000000000001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <plugin name='gz::sim::systems::Physics' filename='gz-sim-physics-system'/>
+    <plugin name='gz::sim::systems::UserCommands' filename='gz-sim-user-commands-system'>
+      <set_all_light_entities>true</set_all_light_entities>
+    </plugin>
+    <plugin name='gz::sim::systems::SceneBroadcaster' filename='gz-sim-scene-broadcaster-system'/>
+    <plugin name='gz::sim::systems::Contact' filename='gz-sim-contact-system'/>
+    <plugin name='gz::sim::systems::Imu' filename='gz-sim-imu-system'/>
+    <plugin name='gz::sim::systems::Magnetometer' filename='gz-sim-magnetometer-system'/>
+    <plugin name='gz::sim::systems::Altimeter' filename='gz-sim-altimeter-system'/>
+    <plugin name='gz::sim::systems::NavSat' filename='gz-sim-navsat-system'/>
+    <plugin name='gz::sim::systems::Sensors' filename='gz-sim-sensors-system'>
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gui fullscreen='false'>
+      <plugin name='3D View' filename='GzScene3D'>
+        <gz-gui>
+          <title>3D View</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='string' key='state'>docked</property>
+        </gz-gui>
+        <engine>ogre2</engine>
+        <scene>scene</scene>
+        <ambient_light>0.1 0.1 0.1</ambient_light>
+        <background_color>0.1 0.1 0.1</background_color>
+        <camera_pose>-6 0 6 0 0.5 0</camera_pose>
+      </plugin>
+      <plugin name='World control' filename='WorldControl'>
+        <gz-gui>
+          <title>World control</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>72</property>
+          <property type='double' key='width'>121</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='left' target='left'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <play_pause>1</play_pause>
+        <step>1</step>
+        <start_paused>1</start_paused>
+      </plugin>
+      <plugin name='World stats' filename='WorldStats'>
+        <gz-gui>
+          <title>World stats</title>
+          <property type='bool' key='showTitleBar'>0</property>
+          <property type='bool' key='resizable'>0</property>
+          <property type='double' key='height'>110</property>
+          <property type='double' key='width'>290</property>
+          <property type='double' key='z'>1</property>
+          <property type='string' key='state'>floating</property>
+          <anchors target='3D View'>
+            <line own='right' target='right'/>
+            <line own='bottom' target='bottom'/>
+          </anchors>
+        </gz-gui>
+        <sim_time>1</sim_time>
+        <real_time>1</real_time>
+        <real_time_factor>1</real_time_factor>
+        <iterations>1</iterations>
+      </plugin>
+    </gui>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>6.0000000000000002e-06 2.3e-05 -4.1999999999999998e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>39.79480109851339</latitude_deg>
+      <longitude_deg>-84.08631702793322</longitude_deg>
+      <elevation>265.2</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.1 0.1 0.1 1</ambient>
+      <background>0.1 0.1 0.1 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>1 1</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode/>
+            </friction>
+            <bounce/>
+            <contact/>
+          </surface>
+        </collision>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='GazeboCogniPilot'>
+      <static>false</static>
+      <link name="logo">
+        <pose>0 0 3.1 0 0 -1.57079632679</pose>
+        <light name="led_0" type="spot">
+          <visualize>0</visualize>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <intensity>3.0</intensity>
+          <spot>
+            <inner_angle>2.1</inner_angle>
+            <outer_angle>2.1</outer_angle>
+          </spot>
+          <pose>0 0 0 0 1 0</pose>
+        </light>
+        <light name="led_1" type="spot">
+          <visualize>0</visualize>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <intensity>3.0</intensity>
+          <spot>
+            <inner_angle>2.1</inner_angle>
+            <outer_angle>2.1</outer_angle>
+          </spot>
+          <pose>0 0 0 0 1 2.09439510239</pose>
+        </light>
+        <light name="led_2" type="spot">
+          <visualize>0</visualize>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <intensity>3.0</intensity>
+          <spot>
+            <inner_angle>2.1</inner_angle>
+            <outer_angle>2.1</outer_angle>
+          </spot>
+          <pose>0 0 0 0 1 4.18879020479</pose>
+        </light>
+        <visual name="corti">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>corti</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="pari">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>pari</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="oculi">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>oculi</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="tempi">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>tempi</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="cerebri">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>cerebri</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="text">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>text</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_0">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_0</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_1">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_1</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_2">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_2</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_3">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_3</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_4">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_4</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_5">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_5</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+        <visual name="wing_6">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+              <submesh>
+                <name>wing_6</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+          <cast_shadows>false</cast_shadows>
+        </visual>
+      </link>
+      <link name="gazebo">
+        <pose>0 0 0 0 0 3.14159265359</pose>
+        <light name="led_3" type="point">
+          <visualize>0</visualize>
+          <diffuse>1.0 1.0 1.0</diffuse>
+          <specular>1.0 1.0 1.0</specular>
+          <intensity>3.0</intensity>
+          <pose>0 0 .15 0 0 0</pose>
+        </light>
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <scale>1.125 1.125 0.9375</scale>
+              <uri>model://Gazebo/meshes/gazebo.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <scale>1.125 1.125 0.9375</scale>
+              <uri>model://Gazebo/meshes/gazebo.dae</uri>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+      <link name="nxp">
+        <pose>0 0 .5 0 0 -1.57079632679</pose>
+        <visual name="N">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://NXPLogo/meshes/nxplogo.dae</uri>
+              <submesh>
+                <name>N</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name="X">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://NXPLogo/meshes/nxplogo.dae</uri>
+              <submesh>
+                <name>X</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name="P">
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://NXPLogo/meshes/nxplogo.dae</uri>
+              <submesh>
+                <name>P</name>
+                <center>false</center>
+              </submesh>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+      <joint name="nxpjoint" type="fixed">
+        <parent>gazebo</parent>
+        <child>nxp</child>
+      </joint>
+      <joint name="cognipilotjoint" type="revolute">
+        <parent>gazebo</parent>
+        <child>logo</child>
+        <axis>
+          <xyz>0 0 1</xyz>
+        </axis>
+      </joint>
+      <plugin filename="ignition-gazebo-joint-controller-system" name="ignition::gazebo::systems::JointController">
+        <joint_name>cognipilotjoint</joint_name>
+        <initial_velocity>0.5</initial_velocity>
+      </plugin>
+    </model>
+    <include>
+      <pose>5 5 0 0 0 0</pose>
+      <uri>model://Balloon</uri>
+    </include>
+  </world>
+</sdf>

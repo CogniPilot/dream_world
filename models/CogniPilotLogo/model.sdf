@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.10">
+  <model name="CogniPilotLogo">
+    <self_collide>false</self_collide>
+    <static>true</static>
+    <link name="CogniPilotLogoLink">
+      <visual name="corti">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>corti</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="pari">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>pari</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="oculi">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>oculi</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="tempi">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>tempi</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="cerebri">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>cerebri</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="text">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>text</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_0">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_0</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_1">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_1</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_2">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_2</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_3">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_3</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_4">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_4</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_5">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_5</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="wing_6">
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://CogniPilotLogo/meshes/cognipilotlogometal.dae</uri>
+            <submesh>
+              <name>wing_6</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.10">
+  <model name="Balloon">
+    <link name="balloon_link">
+      <inertial>
+        <pose>0 0 .1 0 0 0</pose>
+      </inertial>
+      <collision name="collision_gore">
+        <pose>0 0 .465 0 0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>.275</radius>
+          </sphere>
+        </geometry>
+      </collision>
+      <collision name="collision_basket">
+        <pose>0 0 .03 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <radius>.07</radius>
+            <length>.05</length>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name="Basket">
+        <geometry>
+          <mesh>
+            <scale>.05 .05 .05</scale>
+            <uri>model://Balloon/meshes/balloon.dae</uri>
+            <submesh>
+              <name>Basket</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+      <visual name="Gore">
+        <geometry>
+          <mesh>
+            <scale>.05 .05 .05</scale>
+            <uri>model://Balloon/meshes/balloon.dae</uri>
+            <submesh>
+              <name>Gore</name>
+              <center>false</center>
+            </submesh>
+          </mesh>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+  </model>
+</sdf>
