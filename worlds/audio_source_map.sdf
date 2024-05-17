@@ -843,21 +843,35 @@
       <static>true</static>
       <pose>3.0 0 0 0 -1.57 0.0 </pose>
       <link name="logical_camera_link">
-        <visual name="visual">
+        <visual name="visual_box">
           <geometry>
             <box>
               <size>0.1 0.1 0.1</size>
             </box>
           </geometry>
         </visual>
-
+        <visual name="visual_cone">
+          <pose>2 0 0 0 -1.57 0.0</pose>
+          <transparency>.25</transparency>
+          <geometry>
+            <cone>
+              <radius>6.2</radius>
+              <length>4</length>
+            </cone>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
         <sensor name='audio_source' type='logical_camera'>"
           <update_rate>10</update_rate>
           <logical_camera>
             <near>0.55</near>
-            <far>15</far>
-            <horizontal_fov>2.0</horizontal_fov>
-            <aspect_ratio>1.778</aspect_ratio>
+            <far>4</far>
+            <horizontal_fov>2</horizontal_fov>
+            <aspect_ratio>1.0</aspect_ratio>
           </logical_camera>
           <alwaysOn>1</alwaysOn>
           <visualize>true</visualize>
