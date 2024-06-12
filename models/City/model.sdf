@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<sdf version="1.10">
+    <model name="City">
+        <static>true</static>
+        <link name="main">
+            <visual name="city_visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/city.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+         </link>
+      </model>
+</sdf>
