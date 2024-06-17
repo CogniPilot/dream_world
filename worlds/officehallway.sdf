@@ -137,6 +137,48 @@
     </model>
     <include>
       <uri>
+        models://uwb_beacon
+      </uri>
+      <name>uwb1</name>
+      <pose>0 -.75 3 -2 0 1</pose>
+    </include>
+    <include>
+      <uri>
+        models://uwb_beacon
+      </uri>
+      <name>uwb2</name>
+      <pose>10 -.75 3 -2 0 1</pose>
+    </include>
+    <include>
+      <uri>
+        models://uwb_beacon
+      </uri>
+      <pose>20 -.75 3 -2 0 1</pose>
+      <name>uwb3</name>
+    </include>
+    <include>
+      <uri>
+        models://uwb_beacon
+      </uri>
+      <pose>30 -.75 3 -2 0 1</pose>
+      <name>uwb4</name>
+    </include>
+    <include>
+      <uri>
+        models://uwb_beacon
+      </uri>
+      <pose>40 -.75 3 -2 0 1</pose>
+      <name>uwb5</name>
+    </include>
+    <include>
+      <uri>
+        models://uwb_beacon
+      </uri>
+      <pose>50 -.75 3 -2 0 1</pose>
+      <name>uwb6</name>
+    </include>
+    <include>
+      <uri>
         models://OfficeHallway
       </uri>
       <pose>0 2 0 0 0 1.57079632679</pose>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.10">
+  <model name="uwb_beacon">
+    <self_collide>false</self_collide>
+    <static>true</static>
+    <link name="beacon">
+      <light name="beacon_light" type="spot">
+        <cast_shadows>false</cast_shadows>
+        <visualize>0</visualize>
+        <diffuse>0 1.0 0</diffuse>
+        <specular>0 1.0 0</specular>
+        <direction>0 0 1</direction>
+        <intensity>5.0</intensity>
+        <spot>
+          <inner_angle>2.0</inner_angle>
+          <outer_angle>2.0</outer_angle>
+        </spot>
+      </light>
+      <visual name="beacon_body">
+        <geometry>
+          <box>
+            <size>.1 .1 .02</size>
+          </box>
+        </geometry>
+        <cast_shadows>false</cast_shadows>
+      </visual>
+    </link>
+  </model>
+</sdf>
